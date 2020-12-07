@@ -1,0 +1,30 @@
+/* ListPage */
+.top_menu {
+    overflow: hidden;
+}
+
+.top_menu .search_box {
+    float: left;
+}
+
+.top_menu .btn_pop {
+    float: left;
+}
+
+.top_menu .btn_add {
+    float: left;
+}
+
+.list li {
+    overflow: hidden;
+    list-style: none;
+    border: 1px solid #ddd;
+}
+
+.list .left {
+    float: left;
+}
+
+.list .right {
+    float: right;
+}
