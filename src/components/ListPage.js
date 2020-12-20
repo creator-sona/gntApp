@@ -1,77 +1,32 @@
 import '../css/Gnt.css';
-import {useState} from "react";
+import {useState, useEffect, useContext} from "react";
 
 function ListPage() {
-    const [pageInfo, setPageInfo] = useState({
-        mode: 'read',
+    const [state, setState] = useState({
+       //여기에 객체
     });
-
+    const [mode, setMode] = useState("read");
+    const [title, setTitle] = useState("리스트");
+    const list = {
+        contents : [
+            {id:"1", type:"give", date:"2020.12.01", target:"라이언", anniv:"결혼", item:"현금", price:"50000", memo:"강남 웨딩홀"},
+            {id:"2", type:"take", date:"2020.12.05", target:"어피치", anniv:"생일", item:"기프티콘", price:"15000", memo:""},
+            {id:"3", type:"give", date:"2020.12.12", target:"하므토리바므토일", anniv:"생일", item:"현금", price:"70000", memo:""},
+        ]
+    };
     return (
-        <div className="list_page">
-            <header>리스트{pageInfo.mode}</header>
-            <main>
-                <input type="button" value="click" onClick={() => setPageInfo({mode : 'write'})}/>
-                <TopMenu pageInfo={pageInfo}/>
-                <List />
-            </main>
+        <div>
+            <header>{title} / {mode}</header>
+            <View mode="read" title="리스트" list={list.contents}/>
         </div>
     );
 }
 
-function TopMenu({pageInfo}){
-    console.log(pageInfo);
-    return (
-        <section className="top_menu">
-            <div className="wrap">
-                <div className="search_box">
-                    <input type="text" placeholder="라이언"/>
-                    <input className="btn_sch" type="button" value="검색"/>
-                </div>
-                <input className="btn_pop" type="button" value="조건"/>
-                <input className="btn_add" type="button" value="등록" />
-            </div>
-        </section>
-    );
-}
 
-function List(){
-    return (
-        <section>
-            <p className="year_line"><span>2020</span></p>
-            <ul className="list">
-                <li className="give_ico">
-                    <div className="left">
-                        <span>12.12</span>
-                        <span className="desc">라이언 결혼 <br/> <small>강남 카카오웨딩홀</small></span>
-                    </div>
-                    <div className="right">
-                        <span>현금</span>
-                        <span className="price">100,000</span>
-                    </div>
-                </li>
-                <li className="take_ico">
-                    <div className="left">
-                        <span>12.12</span>
-                        <span className="desc">어피치 생일 <br/> <small></small></span>
-                    </div>
-                    <div className="right">
-                        <span>기프티콘</span>
-                        <span className="price">15,000</span>
-                    </div>
-                </li>
-                <li className="give_ico">
-                    <div className="left">
-                        <span>12.12</span>
-                        <span className="desc">튜브김튜뷰 돌잔치 <br/> <small>튜브김튜뷰유튜뷰어쩌고저쩌고</small></span>
-                    </div>
-                    <div className="right">
-                        <span>현금</span>
-                        <span className="price">50,000</span>
-                    </div>
-                </li>
-            </ul>
-        </section>
-    );
+function addFromOpen(props){
+    console.log("addFromOpen props : ", props);
+    document.getElementById("view").style.display = "none";
+    document.getElementById("writeForm").style.display = "block";
 }
 
 export default ListPage;

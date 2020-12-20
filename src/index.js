@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
-import ListPage from "./components/ListPage";
+import Main from "./components/Main";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ListPage />
+    <Main />
   </React.StrictMode>,
   document.getElementById('root')
 );

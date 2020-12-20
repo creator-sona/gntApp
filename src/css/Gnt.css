@@ -1,6 +1,6 @@
 /* common */
 * {padding:0;margin:0;}
-li {list-style:none;}
+ul, li {padding:0; list-style:none;}
 header {padding:1rem; text-align:center; font-weight:bold; border-bottom:1px solid #ddd; background-color:antiquewhite}
 main {padding:15px;}
 
@@ -28,4 +28,4 @@ main {padding:15px;}
 .list .right {float:right;}
 .list .right .price {margin-left:10px;}
 
-
+#schPop {display:none; width:250px; height:300px; position:fixed; top:120px; left:70px; z-index:99999; border:1px solid red; background:#fff;}
